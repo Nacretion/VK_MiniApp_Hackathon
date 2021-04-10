@@ -5,10 +5,10 @@ import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenS
 import { AdaptivityProvider, AppRoot } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 
-import Home from './panels/Register';
+import Register from './panels/Register';
 
 const App = () => {
-	const [activePanel, setActivePanel] = useState('home');
+	const [activePanel, setActivePanel] = useState('register');
 	const [fetchedUser, setUser] = useState(null);
 	// const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 	const [popout, setPopout] = useState(null);
@@ -39,7 +39,7 @@ const App = () => {
 		<AdaptivityProvider>
 			<AppRoot>
 				<View activePanel={activePanel} popout={popout}>
-					<Home id='home' fetchedUser={fetchedUser} go={go} />
+					<Register id='register' fetchedUser={fetchedUser} go={go} />
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>

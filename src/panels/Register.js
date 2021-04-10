@@ -8,14 +8,15 @@ import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import SimpleCell from '@vkontakte/vkui/dist/components/SimpleCell/SimpleCell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
-import { Banner, FormItem, Select, Title  } from '@vkontakte/vkui';
+import { Banner, FormItem, Select, Input, FixedLayout  } from '@vkontakte/vkui';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 
-import './Home.css';
+import './Register.css';
 
 
 const Register = ({ id, go, fetchedUser }) => {
 	const [professions, setProfessions] = useState([]);
+
 	return (
 		<Panel id={id}>
 			<PanelHeader>Регистрация</PanelHeader>
@@ -34,15 +35,17 @@ const Register = ({ id, go, fetchedUser }) => {
 				asideMode="dismiss"
 				actions={<Button>Заполнить</Button>}
 				/>
-			<Div> 
-				<FormItem top="Кто вы?">
-				  <Select 
-					placeholder="Выберите профессию"
-					options= {professions}
-				  />
-				</FormItem>
-			</Div>
-				
+			<FormItem top="Кто вы?">
+				<Select 
+				placeholder="Выберите профессию"
+				options= {professions}
+				/>
+			</FormItem>
+			
+			<FormItem top="Сколько вы хотите получать?">
+				<Input placeholder="10000$"/>
+			</FormItem>
+			<Button type="submit" mode="commerce">Далее</Button>
 		</Panel>
 	)
 };
